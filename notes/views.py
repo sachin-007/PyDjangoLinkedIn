@@ -4,11 +4,13 @@ from django.http import Http404
 # Create your views here.
 from .models import Notes
 
-from django.views.generic import ListView,DetailView
+from django.views.generic import CreateView,ListView,DetailView
 
-# def list(request):
-#     all_notes= Notes.objects.all()
-#     return render(request,'notes/notes_list.html',{'notes':all_notes})
+
+class NotesCreateView(CreateView):
+    model = Notes
+    fields = ['title','text']
+    success_url = "/smart/notes"
 
 
 class NotesListView(ListView):
