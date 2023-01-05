@@ -9,3 +9,7 @@
 .list-h1{
     color: purple;
 }
+
+ul-errorlist{
+    display: none;
+}
